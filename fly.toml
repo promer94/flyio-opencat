@@ -1,0 +1,12 @@
+app = "opencat"
+[http_service]
+  internal_port = 80
+  force_https = true
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 200
+    hard_limit = 250
+
+[mounts]
+source="opencat"
+destination="/opt/db"

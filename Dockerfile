@@ -1,0 +1,1 @@
+FROM bayedev/opencatd:latest
