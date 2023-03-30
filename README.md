@@ -19,5 +19,5 @@ fly volumes create opencat --region hkg --size 1
 4. deploy
 
 ```sh
-fly deploy --image bayedev/opencatd:latest
+fly deploy
 ```
