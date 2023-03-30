@@ -1,4 +1,6 @@
 app = "opencat"
+[build]
+  image = "bayedev/opencatd:latest"
 [http_service]
   internal_port = 80
   force_https = true
