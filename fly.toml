@@ -1,14 +1,23 @@
+# fly.toml app configuration file generated for opencat on 2023-04-23T22:24:47+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
 app = "opencat"
+primary_region = "sin"
+kill_timeout = 0
+
 [build]
   image = "bayedev/opencatd:latest"
+
+[[mounts]]
+  source = "opencat"
+  destination = "/opt/db"
+
 [http_service]
   internal_port = 80
   force_https = true
   [http_service.concurrency]
     type = "requests"
-    soft_limit = 200
     hard_limit = 250
-
-[mounts]
-source="opencat"
-destination="/opt/db"
+    soft_limit = 200
